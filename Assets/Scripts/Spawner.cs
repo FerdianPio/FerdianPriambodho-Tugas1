@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
         for(int i = 0; i < civilOnWave; i++)
         {
             GameObject civilInstance = Instantiate(civilian);
-            civilInstance.transform.localPosition = new Vector3((float)Random.Range(-2, 2), transform.localPosition.y, 0);
+            civilInstance.transform.localPosition = new Vector3((float)Random.Range(-8, 8), transform.localPosition.y, 0);
             yield return new WaitForSeconds((float)Random.Range(2, 5));
         }
         yield return new WaitForSeconds(timeToNextWave);
