@@ -615,6 +615,11 @@ MonoBehaviour:
   civilian: {fileID: 121556852590422859, guid: 5dfeed1351b3d624a87895c6f134ba01, type: 3}
   minX: {fileID: 1247536457}
   maxX: {fileID: 618917923}
+  zombies:
+  - {fileID: 9100000, guid: 27e57a1662f81a040ad87a1c945cf05f, type: 2}
+  - {fileID: 9100000, guid: 10c483f90e2308e4ab8b4e9f211421b6, type: 2}
+  - {fileID: 9100000, guid: 928ebbec1ca70724da600573df04b00f, type: 2}
+  - {fileID: 9100000, guid: eb08bbf394109e140943cbd1437f8b26, type: 2}
   enemyPerWave: {x: 30, y: 60}
   civilPerWave: {x: 4, y: 10}
   timeToNextSpawn: 0.5
