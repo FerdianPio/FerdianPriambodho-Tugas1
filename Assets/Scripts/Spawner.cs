@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject enemy, civilian, minX, maxX;
+    public RuntimeAnimatorController[] zombies;
     public Vector2 enemyPerWave, civilPerWave;
     public float timeToNextSpawn, timeToNextWave;
     private bool canSpawn;
@@ -32,6 +33,7 @@ public class Spawner : MonoBehaviour
         {
             canSpawn = false;
             GameObject enemyInstance = Instantiate(enemy);
+            enemy.gameObject.GetComponent<Animator>().runtimeAnimatorController = zombies[Random.Range(0, zombies.Length)];
             enemyInstance.transform.position = new Vector3(Random.Range(minX.transform.position.x, maxX.transform.position.x),transform.localPosition.y,0);
             yield return new WaitForSeconds(timeToNextSpawn);
         }
