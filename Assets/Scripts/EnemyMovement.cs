@@ -31,6 +31,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if(Time.timeScale == 0){
+            return;
+        }
         Destroy(this.gameObject);
         if (gameObject.tag == "enemy")
         {
