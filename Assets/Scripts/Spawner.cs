@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject enemy, civilian;
-    public int enemyPerWave, civilPerWave;
+    public GameObject enemy, civilian, minX, maxX;
+    public Vector2 enemyPerWave, civilPerWave;
     public float timeToNextSpawn, timeToNextWave;
     private bool canSpawn;
 
     void Start()
     {
         canSpawn = true;
+        Debug.Log(maxX.transform.position.x);
     }
 
     // Update is called once per frame
@@ -19,18 +20,19 @@ public class Spawner : MonoBehaviour
     {
         if (canSpawn)
         {
-            StartCoroutine(SpawnZombie(enemyPerWave));
-            StartCoroutine(SpawnCivil(civilPerWave));
+            StartCoroutine(SpawnZombie(Random.Range((int)enemyPerWave.x,(int)enemyPerWave.y)));
+            //StartCoroutine(SpawnCivil(Random.Range((int)civilPerWave.x, (int)civilPerWave.y)));
         }
     }
 
     public IEnumerator SpawnZombie(int enemyPerWave)
     {
+        StartCoroutine(SpawnCivil(Random.Range((int)civilPerWave.x, (int)civilPerWave.y)));
         for (int i = 0; i < enemyPerWave; i++)
         {
             canSpawn = false;
             GameObject enemyInstance = Instantiate(enemy);
-            enemyInstance.transform.localPosition = new Vector3((float)Random.Range(-8,8),transform.localPosition.y,0);
+            enemyInstance.transform.position = new Vector3(Random.Range(minX.transform.position.x, maxX.transform.position.x),transform.localPosition.y,0);
             yield return new WaitForSeconds(timeToNextSpawn);
         }
         yield return new WaitForSeconds(timeToNextWave);
@@ -43,11 +45,11 @@ public class Spawner : MonoBehaviour
         for(int i = 0; i < civilOnWave; i++)
         {
             GameObject civilInstance = Instantiate(civilian);
-            civilInstance.transform.localPosition = new Vector3((float)Random.Range(-8, 8), transform.localPosition.y, 0);
+            civilInstance.transform.position = new Vector3(Random.Range(minX.transform.position.x, maxX.transform.position.x), transform.localPosition.y, 0);
             yield return new WaitForSeconds((float)Random.Range(2, 5));
         }
         yield return new WaitForSeconds(timeToNextWave);
-        StartCoroutine(SpawnCivil(civilOnWave));
+        //StartCoroutine(SpawnCivil(civilOnWave));
     }
 
 }
