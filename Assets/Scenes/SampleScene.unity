@@ -611,10 +611,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea668ca0bdf0fa4fa62d06459a4cca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 121556852590422859, guid: d2d0fa6ccab5ae2418b80e4342fbea7d, type: 3}
-  civilian: {fileID: 121556852590422859, guid: 5dfeed1351b3d624a87895c6f134ba01, type: 3}
-  minX: {fileID: 1247536457}
-  maxX: {fileID: 618917923}
+  zombie:
+  - {fileID: 121556852590422859, guid: d2d0fa6ccab5ae2418b80e4342fbea7d, type: 3}
+  - {fileID: 121556852590422859, guid: 1413b077d123d9841845c1e1c908c7ec, type: 3}
+  civilian:
+  - {fileID: 121556852590422859, guid: 5dfeed1351b3d624a87895c6f134ba01, type: 3}
   zombies:
   - {fileID: 9100000, guid: 27e57a1662f81a040ad87a1c945cf05f, type: 2}
   - {fileID: 9100000, guid: 10c483f90e2308e4ab8b4e9f211421b6, type: 2}
@@ -872,7 +873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &618917924
 Transform:
   m_ObjectHideFlags: 0
@@ -983,7 +984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &954106168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,7 +1173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1247536458
 Transform:
   m_ObjectHideFlags: 0

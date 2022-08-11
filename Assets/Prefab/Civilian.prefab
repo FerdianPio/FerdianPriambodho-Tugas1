@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 121556852590422967}
   - component: {fileID: 121556852590422966}
   - component: {fileID: 121556852590422857}
-  - component: {fileID: 121556852590422856}
   - component: {fileID: 9209152260324364121}
   - component: {fileID: 8792120276926041810}
+  - component: {fileID: 4787367051334968361}
   m_Layer: 0
   m_Name: Civilian
   m_TagString: civilian
@@ -109,19 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &121556852590422856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121556852590422859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f3e25d09d493742a9f00f6ff2af5b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!58 &9209152260324364121
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -158,3 +145,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4787367051334968361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121556852590422859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707cc1e7e47fd94408062ce0bb66dc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
