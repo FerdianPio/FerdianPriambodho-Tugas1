@@ -23,12 +23,6 @@ public class ZombieZig : BaseController, ILifeReduce, IPointMaker
         Move();
     }
 
-    protected new void OnMouseDown()
-    {
-        base.OnMouseDown();
-        AddPoint(point);
-    }
-
     protected override void Move()
     {
         FlipDirection();
@@ -63,6 +57,12 @@ public class ZombieZig : BaseController, ILifeReduce, IPointMaker
             Destroy(gameObject);
             ReduceLife(dammage);
         }
+    }
+
+    public override void OnMouseDown()
+    {
+        base.OnMouseDown();
+        AddPoint(point);
     }
 
     public void AddPoint(int i)
