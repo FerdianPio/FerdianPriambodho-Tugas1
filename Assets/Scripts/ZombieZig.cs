@@ -18,11 +18,6 @@ public class ZombieZig : BaseController, ILifeReduce, IPointMaker
         StartCoroutine(ZigZag(timeToZig, zigTime));
     }
 
-    void Update()
-    {
-        Move();
-    }
-
     protected override void Move()
     {
         FlipDirection();
@@ -59,10 +54,9 @@ public class ZombieZig : BaseController, ILifeReduce, IPointMaker
         }
     }
 
-    public override void OnMouseDown()
+    protected override void ActionOnClick()
     {
-        base.OnMouseDown();
-        AddPoint(point);
+        //AddPoint(point);
     }
 
     public void AddPoint(int i)

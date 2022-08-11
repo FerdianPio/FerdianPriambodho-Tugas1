@@ -36,4 +36,5 @@ public class GameSetting : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
