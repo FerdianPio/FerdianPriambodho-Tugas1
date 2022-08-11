@@ -11,11 +11,6 @@ public class Zombie : BaseController, ILifeReduce, IPointMaker
         
     }
 
-    void Update()
-    {
-        Move();
-    }
-
     protected override void Move()
     {
         transform.Translate(speed * Time.deltaTime * new Vector3(0, -1f, 0));
@@ -31,9 +26,8 @@ public class Zombie : BaseController, ILifeReduce, IPointMaker
         }
     }
 
-    public override void OnMouseDown()
+    protected override void ActionOnClick()
     {
-        base.OnMouseDown();
         AddPoint(point);
     }
 

@@ -16,7 +16,6 @@ public class Spawner : MonoBehaviour
         //Debug.Log(Camera.main.orthographicSize * Camera.main.aspect);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (canSpawn)

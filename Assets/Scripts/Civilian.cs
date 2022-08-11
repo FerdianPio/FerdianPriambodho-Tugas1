@@ -8,25 +8,27 @@ public class Civilian : BaseController, ILifeReduce
     {
         
     }
-    void Update()
-    {
-        Move();   
-    }
+    
     protected override void Move()
     {
         transform.Translate(speed * Time.deltaTime * new Vector3(0, -1f, 0));
         DestroyOnDefenceLine();
     }
 
-    public override void OnMouseDown()
+    protected override void ActionOnClick()
     {
-        base.OnMouseDown();
-        ReduceLife(GameObject.Find("GameSetting").GetComponent<GameSetting>().HP);
+        //ReduceLife(GameObject.Find("GameSetting").GetComponent<GameSetting>().HP);
     }
 
 
     public void ReduceLife(int i)
     {
         GameObject.Find("GameSetting").GetComponent<GameSetting>().HP -= i;
+    }
+
+    private void OnDestroy()
+    {
+        if (transform.position.y>-Camera.main.orthographicSize)
+        ReduceLife(GameObject.Find("GameSetting").GetComponent<GameSetting>().HP);
     }
 }
