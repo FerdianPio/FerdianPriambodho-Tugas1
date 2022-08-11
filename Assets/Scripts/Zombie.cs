@@ -28,7 +28,7 @@ public class Zombie : BaseController, ILifeReduce, IPointMaker
 
     protected override void ActionOnClick()
     {
-        //AddPoint(point);
+        AddPoint(point);
     }
 
     public void AddPoint(int i)

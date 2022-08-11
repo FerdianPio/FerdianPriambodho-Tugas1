@@ -25,4 +25,10 @@ public class Civilian : BaseController, ILifeReduce
     {
         GameObject.Find("GameSetting").GetComponent<GameSetting>().HP -= i;
     }
+
+    private void OnDestroy()
+    {
+        if (transform.position.y>-Camera.main.orthographicSize)
+        ReduceLife(GameObject.Find("GameSetting").GetComponent<GameSetting>().HP);
+    }
 }

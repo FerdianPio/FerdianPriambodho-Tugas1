@@ -32,7 +32,7 @@ public class RaycastController : MonoBehaviour
             {
                 return;
             }
-            Destroy(gameObject);
+            //Destroy(hit.collider.gameObject);
             //ActionOnClick();
         }
     }
