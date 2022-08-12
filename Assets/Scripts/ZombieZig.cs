@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieZig : BaseController, ILifeReduce, IPointMaker
+public class ZombieZig : Enemy
 {
-    [SerializeField] private int point;
-    [SerializeField] private int dammage;
     [SerializeField] private float timeToZig;
     [SerializeField] private float zigTime;
     private float x=0;
@@ -21,9 +19,7 @@ public class ZombieZig : BaseController, ILifeReduce, IPointMaker
     protected override void Move()
     {
         FlipDirection();
-        transform.Translate(speed * Time.deltaTime * new Vector3(x, -1f, 0));
-        
-        DestroyOnDefenceLine();
+        base.Move();
     }
 
     IEnumerator ZigZag(float timeStraight, float timeZig)
@@ -43,29 +39,5 @@ public class ZombieZig : BaseController, ILifeReduce, IPointMaker
         {
             x = -x;
         }
-    }
-
-    protected override void DestroyOnDefenceLine()
-    {
-        if (transform.position.y <= -Camera.main.orthographicSize)
-        {
-            Destroy(gameObject);
-            ReduceLife(dammage);
-        }
-    }
-
-    protected override void ActionOnClick()
-    {
-        AddPoint(point);
-    }
-
-    public void AddPoint(int i)
-    {
-        GameObject.Find("GameSetting").GetComponent<GameSetting>().point += i;
-    }
-
-    public void ReduceLife(int i)
-    {
-        GameObject.Find("GameSetting").GetComponent<GameSetting>().HP -= i;
     }
 }
