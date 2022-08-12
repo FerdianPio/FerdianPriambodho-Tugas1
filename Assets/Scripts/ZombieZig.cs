@@ -19,7 +19,8 @@ public class ZombieZig : Enemy
     protected override void Move()
     {
         FlipDirection();
-        base.Move();
+        transform.Translate(speed * Time.deltaTime * new Vector3(x, -1f, 0));
+        DestroyOnDefenceLine();
     }
 
     IEnumerator ZigZag(float timeStraight, float timeZig)
